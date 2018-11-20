@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="Nu7-xh-Vha">
+            <objects>
+                <viewController id="X05-OU-oAK" customClass="MainViewController" customModule="Strava1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8EO-dv-gGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="T0D-ct-oQZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <connections>
+                                    <outlet property="delegate" destination="X05-OU-oAK" id="zpb-Ue-pRB"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  *distance travelled*  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgF-LW-fjZ">
+                                <rect key="frame" x="57" y="373.5" width="261" height="36"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.29803921570000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBE-Aj-hp1">
+                                <rect key="frame" x="119" y="489.5" width="137" height="54"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.29803921570000003" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="  Record  ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="X05-OU-oAK" eventType="touchUpInside" id="fi1-O5-oYi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XBE-Aj-hp1" firstAttribute="centerX" secondItem="8EO-dv-gGU" secondAttribute="centerX" id="8AK-4A-no0"/>
+                            <constraint firstItem="T0D-ct-oQZ" firstAttribute="leading" secondItem="HxI-EE-je5" secondAttribute="leading" id="A4g-ZS-bp8"/>
+                            <constraint firstItem="T0D-ct-oQZ" firstAttribute="trailing" secondItem="HxI-EE-je5" secondAttribute="trailing" id="DSF-5F-F0D"/>
+                            <constraint firstItem="T0D-ct-oQZ" firstAttribute="height" secondItem="8EO-dv-gGU" secondAttribute="height" multiplier="0.5" id="EuL-yo-EzY"/>
+                            <constraint firstItem="IgF-LW-fjZ" firstAttribute="top" secondItem="T0D-ct-oQZ" secondAttribute="bottom" constant="40" id="ULP-GH-lAY"/>
+                            <constraint firstItem="T0D-ct-oQZ" firstAttribute="top" secondItem="8EO-dv-gGU" secondAttribute="top" id="cdJ-nr-Wgj"/>
+                            <constraint firstItem="XBE-Aj-hp1" firstAttribute="top" secondItem="IgF-LW-fjZ" secondAttribute="bottom" constant="80" id="cfo-3G-v7m"/>
+                            <constraint firstItem="IgF-LW-fjZ" firstAttribute="centerX" secondItem="8EO-dv-gGU" secondAttribute="centerX" id="kAN-Ru-J2G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HxI-EE-je5"/>
+                    </view>
+                    <connections>
+                        <outlet property="distanceTravelledLabel" destination="IgF-LW-fjZ" id="Zs4-9n-TNu"/>
+                        <outlet property="mapView" destination="T0D-ct-oQZ" id="DyR-C0-AhC"/>
+                        <outlet property="recordButton" destination="XBE-Aj-hp1" id="bGA-kh-xMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WbG-2m-EtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
